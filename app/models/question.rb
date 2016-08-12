@@ -21,7 +21,7 @@ class Question < ApplicationRecord
   before_validation :capitalize_title
 
   def titleized_title
-    title.titleize
+    :title.titleize
   end
 
   # scope :recent_ten, lambda { order(created_at: :desc).limit(10) }

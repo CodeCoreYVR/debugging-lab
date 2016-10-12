@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # before_action :find_question, except: [:create, :new, :index]
   before_action :find_question, only: [:show, :edit, :update, :destroy]
 
-  QUESTIONS_PER_PAGE = 10
+  QUESTIONS_PER_PAGE = 0
 
   # GET /questions/new
   def new
@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question        = Question.new question_params
+    @question = Question.new question_params
 
     if @question.save
       # render :show
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
       # redirect_to question_path({id: @question})
 
       # flash[:notice] = "Question created successfully"
-      redirect_to question_path(@question), notice: "Question created successfully"
+      redirect_to (question_path(@question), notice: "Question created successfully")
       # redirect_to @question
     else
       flash[:alert] = "Please fix errors below before saving"

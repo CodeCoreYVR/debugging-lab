@@ -29,10 +29,6 @@ class Question < ApplicationRecord
 
   before_validation :capitalize_title
 
-  def titleized_title
-    :title.titleize
-  end
-
   # scope :recent_ten, lambda { order(created_at: :desc).limit(10) }
   def self.recent_ten
     order(created_at: :desc).limit(10)
@@ -45,7 +41,7 @@ class Question < ApplicationRecord
   private
 
   def capitalize_title
-    self.title.capitalize! if title
+    :title.capitalize! if title
   end
 
   def no_monkey

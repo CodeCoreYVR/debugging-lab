@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class WelcomeController << ApplicationController
   # by default all actions will render with views/layouts/application.html.erb
   # unless you specify something like:
   # layout "special"

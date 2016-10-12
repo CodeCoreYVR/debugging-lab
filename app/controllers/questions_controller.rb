@@ -85,7 +85,7 @@ class QuestionsController < ApplicationController
 
     # we're using the `strong parameters` feature of Rails here to only allow
     # mass-assigning the attributes that we want to allow the user to set
-    params.require(:question).permit([:title, :body])
+    params.require(:question).permit([:titl, :body])
   end
 
 end
